@@ -1,11 +1,46 @@
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+	---
+	import Header from '../components/Header.astro';
+	import Layout from '../layouts/Layout.astro';
+	import { Image } from 'astro:assets';
+	import Storefront from '../assets/storefront.png';
+	import Main from "../components/Main.astro"
+	import H1 from "../components/H1.astro"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
+	// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+	// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+	---
 
-<Layout>
-	<Welcome />
-</Layout>
+	<Layout>
+		<Main>
+			<div class ="home-container">
+				<Image
+				src={Storefront},
+				alt ="storefront",
+				width={450},
+				class="centered-iamge"
+				/>
+				<div class ="text-container">
+					<h1>Urban Jungle of <br/> Regent Square</h1>
+					<p> something something something something 
+						something something something something 
+						something something something something 
+						something something something something</p>
+				</div>
+			</div>
+		</Main>
+	</Layout>
+
+	<style>
+		.home-container {
+			position: relative; /* Makes it the parent for positioning */
+			display: flex; /* Enables Flexbox for alignment */
+			justify-content: center; /* Horizontally centers content */
+			align-items: center; /* Vertically centers content */
+			gap: 20px; /* Adds 20px of space between the items */
+			/* height: 100vh; Full viewport height for proper centering */
+		}
+		.text-container {
+			width: 30vw;
+		}
+		
+	</style>
