@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import MainAlt from './MainAlt.astro';
+
 type Props = {
   name: string;
   description: string;
@@ -10,112 +11,57 @@ type Props = {
 
 const { name, description, photo, gallery } = Astro.props;
 ---
-<MainAlt>
-    
-  <!-- Gallery Section -->
-  <div class="artist-gallery">
-    <div class="artist-details">
-      <div class="artist-photo">
-        <Image src={photo} alt={name} />
-      </div>
 
-      <div class="artist-description">
-        <h1>{name}</h1>
-        <p>{description}</p>
+<MainAlt>
+  <div class="flex flex-col sm:flex-row w-full gap-5 p-4 h-screen  :overflow-hidden">
+    <!-- Artist Details -->
+    <div class="w-full sm:w-1/4 flex flex-col gap-5">
+      <div class="w-full">
+        <Image 
+          src={photo} 
+          alt={name} 
+          class="w-full h-auto object-cover"
+        />
+      </div>
+      <div class="space-y-3">
+        <h1 class="text-2xl font-bold">{name}</h1>
+        <p class="text-gray-600">{description}</p>
       </div>
     </div>
 
-    <div class="gallery-grid">
-      {gallery.map((work, index) => (
-        <div class="gallery-item">
-          <Image src={work} alt={`Artwork ${index + 1}`} />
-        </div>
-      ))}
+    <!-- Gallery Grid -->
+    <div class="w-full sm:w-3/4 overflow-x-auto">
+      <div class="flex flex-col sm:flex-row gap-5 sm:min-w-max pb-4">
+        {gallery.map((work, index) => (
+          <div class="w-full sm:w-auto sm:h-[80vh] flex-none">
+            <Image 
+              src={work} 
+              alt={`Artwork ${index + 1}`}
+              class="w-full sm:h-full sm:w-auto object-contain"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </MainAlt>
 
 <style>
-    body {
-        overflow: hidden;
-    }
-  .artist-gallery {
-    display: flex;
-    /* height: 100vh; Full viewport height */
-    gap: 20px; /* Space between the details and gallery grid */
+  /* Custom scrollbar */
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 6px;
   }
-
-  .artist-details {
-    position: relative;
-    width: 25%; /* Take up 1/3 of the page */
-    padding: 20px; /* Add some padding around details */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .artist-photo {
-    margin-bottom: 20px; /* Space between photo and description */
-  }
-
-  .artist-description h1 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-
-  .artist-description p {
-    font-size: 1rem;
-    color: #555; /* Lighter text color for description */
-  }
-
-  .gallery-grid {
-    display: flex;
-    gap: 20px; /* Space between grid items */
-    width: 66.66%; /* Take up 2/3 of the page */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling effect */
-    white-space: nowrap; /* Prevent items from wrapping */
-    padding: 20px 0; /* Vertical padding inside the grid */
-  }
-
-  .gallery-item {
-    flex: 0 0 auto; /* Prevent items from shrinking or growing */
-    width: 70%; /* Fixed width for each image item */
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: auto;
-  }
-
-  .gallery-grid::-webkit-scrollbar-thumb {
-    background: #888; /* Scrollbar thumb color */
-    border-radius: 4px;
-  }
-
-  .gallery-grid::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker color on hover */
-  }
-  .back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    font-size: 1rem; /* Adjust font size for a minimal look */
-    color: #333; /* Neutral color */
-    background: none;
-    border: none;
-    padding: 5px 10px; /* Minimal padding */
-    border-radius: 4px; /* Rounded edges */
-    transition: background-color 0.2s ease, color 0.2s ease;
-    cursor: pointer;
-  }
-
-  .back-button:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover */
-    color: #0077cc; /* Accent color for hover */
-  }
-
   
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 </style>

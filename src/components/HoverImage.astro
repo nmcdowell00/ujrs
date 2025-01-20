@@ -4,58 +4,16 @@ import { Image } from "astro:assets";
 const { imageSrc, altText, hoverName, hoverProfession, className } = Astro.props;
 ---
 
-<div class={`hover-image-container ${className}`}>
-  <Image src={imageSrc} width={1200} height={1500} alt={altText} class="hover-image" />
-  <div class="hover-text">
-    <div class="hover-name">{hoverName}</div>
-    <div class="hover-profession">{hoverProfession}</div>
+<div class={`relative inline-block w-[225px] overflow-hidden ${className}`}>
+    <Image 
+      src={imageSrc} 
+      width={1200} 
+      height={1500} 
+      alt={altText} 
+      class="w-full h-full object-cover block"
+    />
+    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center opacity-0 hover:opacity-100 transition-opacity duration-300 p-2.5">
+      <div class="font-bold text-2xl">{hoverName}</div>
+      <div class="text-xl mt-1.5">{hoverProfession}</div>
+    </div>
   </div>
-</div>
-
-<style>
-  .hover-image-container {
-    position: relative;
-    display: inline-block;
-    width: 15vw; /* Adjust to fit your needs */
-    overflow: hidden;
-  }
-
-  .hover-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .hover-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    color: white;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    padding: 10px;
-  }
-
-  .hover-image-container:hover .hover-text {
-    opacity: 1;
-  }
-
-  .hover-name {
-    font-weight: bold;
-    font-size: 1.5rem; /* Adjust size as needed */
-  }
-
-  .hover-profession {
-    font-size: 1.25rem; /* Adjust size as needed */
-    margin-top: 5px; /* Adds space between the name and profession */
-  }
-</style>

@@ -17,40 +17,20 @@ const artist = {
   gallery: [work1, work2, work3, work4],
 };
 ---
-
 <Layout>
-  
-
-
-  <ArtistPage
-    name={artist.name}
-    description={artist.description}
-    photo={artist.photo}
-    gallery={artist.gallery}
-  />
+  <div class=" sm:overflow-hidden">
+    <ArtistPage
+      name={artist.name}
+      description={artist.description}
+      photo={artist.photo}
+      gallery={artist.gallery}
+    />
+  </div>
 </Layout>
+
 <style>
-  .back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    font-size: 1rem; /* Adjust font size for a minimal look */
-    color: #333; /* Neutral color */
-    background: none;
-    border: none;
-    padding: 5px 10px; /* Minimal padding */
-    border-radius: 4px; /* Rounded edges */
-    transition: background-color 0.2s ease, color 0.2s ease;
-    cursor: pointer;
-  }
-
-  .back-button:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover */
-    color: #0077cc; /* Accent color for hover */
-  }
-
-  .back-button:focus {
-    outline: 2px solid #0077cc; /* Focus state for accessibility */
+  body {
+    margin: 0;
+    padding: 0;
   }
 </style>
