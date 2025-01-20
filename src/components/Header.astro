@@ -1,38 +1,57 @@
----
-
----
-<header style="padding: 1rem">
-    <ul style="list-style: none; 
-                display: flex; 
-                gap: 1.5rem; 
-                margin: 0; 
-                padding: 0; 
-                postition: relative;
-                ">
-        <li>
-            <a href = "/">Home</a>
-        </li>
-
-        <li>
-            <a href = "/events">Events</a>
-        </li>
-
-        <li>
-            <a href = "/artisans">Artisans</a>
-        </li>
+<header>
+    <ul class="nav-list">
+      <li>
+        <a href="/" class="nav-link">Home</a>
+      </li>
+  
+      <li>
+        <a href="/events" class="nav-link">Events</a>
+      </li>
+  
+      <li>
+        <a href="/artisans" class="nav-link">Artisans</a>
+      </li>
+      <li>
+        <a href="/test" class="nav-link">Test</a>
+      </li>
     </ul>
-</header>
+  </header>
 
-<style>
-    li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    font-size: 1.2rem;
-  }
+  
+  <style>
+    /* Styles for the header */
+    header {
+      padding: 1rem;
+      background-color:rgba(248, 246, 245, 0.9); ;
+      position: sticky;
+    top: 0;
+    z-index: 1000; 
+    }
+  
+    /* Styles for the navigation list */
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 10px;
+      position: relative; /* Fixed typo: position, not postition */
+    }
+  
+    /* Styles for the navigation links */
+    .nav-link {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #065f46; /* Teal color */
+      transition: text-decoration 0.2s ease, color 0.2s ease; /* Smooth transitions */
+    }
+  
+    /* Hover effect for the navigation links */
+    .nav-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
-  li a:hover {
-    color: #007bff;
-  }
-</style>
+  </style>
+  

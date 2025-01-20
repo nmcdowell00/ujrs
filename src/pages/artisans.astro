@@ -1,18 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import ArtisanCard from "../components/artisanCard.astro";
+import EventCard from "../components/eventCard.astro";
+import Main from "../components/Main.astro";
+import Layout from "../layouts/Layout.astro";
 
-import Main from "../components/Main.astro"
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import janeDoeArt from '../assets/images/art1.jpg';
+import jaxDoeArt from '../assets/images/art2.jpg';
 ---
-
 <Layout>
     <Main>
-       
+        <!-- <H1>Events Page</H1> -->
+        <div class="event-list">
+            <div class="person1">
+                <ArtisanCard
+                name = {"Jane Doe"}
+                profession = {"Jewler"}
+                headshot = {janeDoeArt}
+                description = {"what the Heck"}/>
+            </div>
+            <div class="person1">
+                <ArtisanCard
+                name = {"Jane Doe"}
+                profession = {"Jewler"}
+                headshot = {janeDoeArt}
+                description = {"what the Heck"}/>
+            </div>
+            <div class="person1">
+                <ArtisanCard
+                name = {"Jane Doe"}
+                profession = {"Jewler"}
+                headshot = {jaxDoeArt}
+                description = {"what the Heck"}/>
+            </div>
+        </div>
     </Main>
 </Layout>
 
 <style>
-    
-</style>
+    body {
+        overflow: hidden;
+    }
+    .event-list {
+      display: flex;
+      align-items: center; /* Vertically aligns items */
+      justify-content: center; /* Horizontally centers items */
+      gap: 20px; /* Adds space between the items */
+      width: 100%; /* Ensures the list takes up full width */
+      padding: 20px; /* Adds padding around the container */
+      box-sizing: border-box;
+    }
+  </style>
+  

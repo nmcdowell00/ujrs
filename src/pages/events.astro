@@ -1,16 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
 import Main from "../components/Main.astro"
+import H1 from '../components/H1.astro';
+import EventCard from '../components/eventCard.astro';
+import {getCollection} from "astro:content";
+import MainAlt from '../components/MainAlt.astro';
 
+const events = await getCollection("events");
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-    <Main>
-       
-    </Main>
+    <MainAlt>
+        <!-- <H1>Events Page</H1> -->
+        <div class="event-list">
+            {events.map((event) => (
+              <EventCard 
+                name={event.data.title} 
+                date={event.data.date} 
+                time={event.data.time} 
+                description={event.data.description} 
+              />
+            ))}
+        </div>
+    </MainAlt>
 </Layout>
 
 <style>

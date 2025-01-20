@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ArtistPage from "../components/artisanPage.astro";
+
+import artistPhoto from "../assets/headshots/person1.png";
+import work1 from "../assets/products/work1.webp";
+import work2 from "../assets/products/work2.webp";
+import work3 from "../assets/products/work3.webp";
+import work4 from "../assets/products/work4.webp";
+import Main from "../components/Main.astro";
+import MainAlt from "../components/MainAlt.astro";
+
+const artist = {
+  name: "Jane Doe",
+  description: "Jane Doe is a contemporary artist specializing in abstract painting and mixed media works. Her art explores themes of identity, connection, and transformation.",
+  photo: artistPhoto,
+  gallery: [work1, work2, work3, work4],
+};
+---
+
+<Layout>
+  
+
+
+  <ArtistPage
+    name={artist.name}
+    description={artist.description}
+    photo={artist.photo}
+    gallery={artist.gallery}
+  />
+</Layout>
+<style>
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 1rem; /* Adjust font size for a minimal look */
+    color: #333; /* Neutral color */
+    background: none;
+    border: none;
+    padding: 5px 10px; /* Minimal padding */
+    border-radius: 4px; /* Rounded edges */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+  }
+
+  .back-button:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover */
+    color: #0077cc; /* Accent color for hover */
+  }
+
+  .back-button:focus {
+    outline: 2px solid #0077cc; /* Focus state for accessibility */
+  }
+</style>
