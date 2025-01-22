@@ -1,53 +1,139 @@
 ---
-import ArtisanCard from "../components/artisanCard.astro";
-import EventCard from "../components/eventCard.astro";
 import Main from "../components/Main.astro";
 import Layout from "../layouts/Layout.astro";
 
-import janeDoeArt from '../assets/images/art1.jpg';
-import jaxDoeArt from '../assets/images/art2.jpg';
+import { getCollection } from 'astro:content'
+import HoverImage from "../components/HoverImage.astro";
+const assets = await getCollection('assets')
+console.log('assets',assets)
+import MainAlt from "../components/MainAlt.astro";
+
+// images to import
+import person1 from "../assets/headshots/person1.png"
+import person2 from "../assets/headshots/person2.png"
+import person3 from "../assets/headshots/person3.png"
+import person4 from "../assets/headshots/person4.png"
+import person5 from "../assets/headshots/person5.png"
+import H1 from "../components/H1.astro";
 ---
 <Layout>
-    <Main>
-        <!-- <H1>Events Page</H1> -->
-        <div class="event-list">
-            <div class="person1">
-                <ArtisanCard
-                name = {"Jane Doe"}
-                profession = {"Jewler"}
-                headshot = {janeDoeArt}
-                description = {"what the Heck"}/>
-            </div>
-            <div class="person1">
-                <ArtisanCard
-                name = {"Jane Doe"}
-                profession = {"Jewler"}
-                headshot = {janeDoeArt}
-                description = {"what the Heck"}/>
-            </div>
-            <div class="person1">
-                <ArtisanCard
-                name = {"Jane Doe"}
-                profession = {"Jewler"}
-                headshot = {jaxDoeArt}
-                description = {"what the Heck"}/>
+    <MainAlt>
+        <div class="px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-[1920px] mx-auto justify-items-center">
+                <a href="./joeDorn" class="h-full">
+                        <HoverImage 
+                            imageSrc={person1} 
+                            altText="Description of the image" 
+                            hoverName="Joe Dorn" 
+                            hoverProfession="Silver Smith"
+                            className="custom-class"
+                        />
+                </a>
+
+                <a>
+                <HoverImage 
+                    imageSrc={person2} 
+                    altText="Description of the image" 
+                    hoverName="Jax Corn" 
+                    hoverProfession="Woodworker"
+                    className="custom-class"
+                />
+                </a>
+
+                <a>
+                <HoverImage 
+                    imageSrc={person3} 
+                    altText="Description of the image" 
+                    hoverName="Jax Corn" 
+                    hoverProfession="Woodworker"
+                    className="custom-class"
+                />
+                </a>
+
+                <a>
+                <HoverImage 
+                    imageSrc={person4} 
+                    altText="Description of the image" 
+                    hoverName="Jax Corn" 
+                    hoverProfession="Woodworker"
+                    className="custom-class"
+                />
+                </a>
+
+                <a>
+                <HoverImage 
+                    imageSrc={person5} 
+                    altText="Description of the image" 
+                    hoverName="Jax Corn" 
+                    hoverProfession="Woodworker"
+                    className="custom-class"
+                />
+                </a>
+
+                <a>
+                <HoverImage 
+                    imageSrc={person2} 
+                    altText="Description of the image" 
+                    hoverName="Jax Corn" 
+                    hoverProfession="Woodworker"
+                    className="custom-class"
+                />
+                </a>
+
+                <a>
+                    <HoverImage 
+                        imageSrc={person2} 
+                        altText="Description of the image" 
+                        hoverName="Jax Corn" 
+                        hoverProfession="Woodworker"
+                        className="custom-class"
+                    />
+                </a>
+
+                <a>
+                    <HoverImage 
+                        imageSrc={person2} 
+                        altText="Description of the image" 
+                        hoverName="Jax Corn" 
+                        hoverProfession="Woodworker"
+                        className="custom-class"
+                    />
+                </a>
+
+                <a>
+                    <HoverImage 
+                        imageSrc={person2} 
+                        altText="Description of the image" 
+                        hoverName="Jax Corn" 
+                        hoverProfession="Woodworker"
+                        className="custom-class"
+                    />
+                </a>
+                <a>
+                    <HoverImage 
+                        imageSrc={person2} 
+                        altText="Description of the image" 
+                        hoverName="Jax Corn" 
+                        hoverProfession="Woodworker"
+                        className="custom-class"
+                    />
+                </a>
+                <a>
+                    <HoverImage 
+                        imageSrc={person2} 
+                        altText="Description of the image" 
+                        hoverName="Jax Corn" 
+                        hoverProfession="Woodworker"
+                        className="custom-class"
+                    />
+                </a>
+
+
+                
+                {/* ... rest of your HoverImage components ... */}
             </div>
         </div>
-    </Main>
+    </MainAlt>
 </Layout>
 
-<style>
-    body {
-        overflow: hidden;
-    }
-    .event-list {
-      display: flex;
-      align-items: center; /* Vertically aligns items */
-      justify-content: center; /* Horizontally centers items */
-      gap: 20px; /* Adds space between the items */
-      width: 100%; /* Ensures the list takes up full width */
-      padding: 20px; /* Adds padding around the container */
-      box-sizing: border-box;
-    }
-  </style>
   

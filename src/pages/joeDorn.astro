@@ -11,14 +11,15 @@ import Main from "../components/Main.astro";
 import MainAlt from "../components/MainAlt.astro";
 
 const artist = {
-  name: "Jane Doe",
+  name: "Joe Dorn",
   description: "Jane Doe is a contemporary artist specializing in abstract painting and mixed media works. Her art explores themes of identity, connection, and transformation.",
   photo: artistPhoto,
   gallery: [work1, work2, work3, work4],
 };
 ---
+<body class = "mb:overflow-hidden">
 <Layout>
-  <div class=" sm:overflow-hidden">
+  <div class="">
     <ArtistPage
       name={artist.name}
       description={artist.description}
@@ -27,6 +28,7 @@ const artist = {
     />
   </div>
 </Layout>
+</body>
 
 <style>
   body {

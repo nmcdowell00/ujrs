@@ -1,0 +1,33 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Storefront from '../assets/storefront.png';
+import Main from "../components/Main.astro"
+import H1 from '../components/H1.astro';
+import MainAltNoYScroll from '../components/MainAltNoYScroll.astro';
+---
+
+<Layout>
+	<MainAltNoYScroll>
+		<div class="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-12">
+			<Image
+				src={Storefront}
+				alt="storefront"
+				width={450}
+				class="hidden md:block shadow-lg"
+			/>
+			<div class="w-full max-w-md text-center md:text-left">
+				<H1 class="text-3xl font-bold mb-4">
+					The Urban Jungle <br /> of Regent Square
+				</H1>
+				<p class="text-gray-600">
+					something something something something 
+					something something something something 
+					something something something something 
+					something something something something
+				</p>
+			</div>
+		</div>
+	</MainAltNoYScroll>
+</Layout>

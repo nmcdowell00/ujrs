@@ -5,74 +5,31 @@ import Main from './Main.astro';
 type Props = {
   name: string;
   profession: string;
-  iamge: any;
+  image: any;
   description: string;
 };
 
 const { name, profession, image, description } = Astro.props;
 ---
 
-<div class="card">
-
-    <div class = "image">
+<div class="p-2 max-w-[400px] mx-auto font-sans">
+    <div class="mb-4">
         <Image 
-        src = {image}, 
-        height={600}, 
-        width={600/1.5}, 
-        alt = "">
+            src={image}
+            height={600}
+            width={600/1.5}
+            alt=""
+            class="w-full h-auto"
+        />
     </div>
-    <div class= "text">
-        <span class = "header-info">
-            <h1>{name}</h1>
-            <p>-</p>
-            <p>{profession}</p>
+    <div>
+        <span class="flex items-end gap-2.5">
+            <h1 class="text-lg font-bold">{name}</h1>
+            <p class="text-lg">-</p>
+            <p class="text-lg">{profession}</p>
         </span>
-        <div class = "description">
-            <p>{description}</p>
+        <div class="mt-2">
+            <p class="text-[0.95rem] text-neutral-800 leading-6">{description}</p>
         </div>
     </div>
 </div>
-
-<style>
-    .card {
-      /* border: 2px solid rgb(0, 0, 0); */
-      /* border-radius: 8px; */
-      padding: 8px;
-      max-width: 400px;
-      margin: 0 auto;
-      /* text-align: center; */
-      /* background: #fff; */
-      /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
-      font-family: Arial, sans-serif;
-    }
-  
-    .image {
-      margin-bottom: 16px;
-    }
-  
-    .image img {
-      /* border-radius: 4px; */
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .header-info {
-        display: flex;
-        gap: 10px; /* Adds space between the name and profession */
-        align-items: bottom;
-
-    }
-    .header-info h1 {
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
-    .header-info p {
-        font-size: 1.2rem;
-    }
-    .description {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      color: #333;
-      line-height: 1.5;
-    }
-  </style>

@@ -5,15 +5,24 @@ const { imageSrc, altText, hoverName, hoverProfession, className } = Astro.props
 ---
 
 <div class={`relative inline-block w-[225px] overflow-hidden ${className}`}>
-    <Image 
-      src={imageSrc} 
-      width={1200} 
-      height={1500} 
-      alt={altText} 
-      class="w-full h-full object-cover block"
-    />
-    <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-white text-center opacity-0 hover:opacity-100 transition-opacity duration-300 p-2.5">
-      <div class="font-bold text-2xl">{hoverName}</div>
-      <div class="text-xl mt-1.5">{hoverProfession}</div>
-    </div>
+  <!-- Image -->
+  <Image 
+    src={imageSrc} 
+    width={1200} 
+    height={1500} 
+    alt={altText} 
+    class="w-full h-full object-cover block"
+  />
+
+  <!-- Overlay for desktop view -->
+  <div class="absolute inset-0 hidden sm:flex flex-col items-center justify-center bg-black/50 text-white text-center opacity-0 hover:opacity-100 transition-opacity duration-300 p-2.5">
+    <div class="font-bold text-2xl">{hoverName}</div>
+    <div class="text-xl mt-1.5">{hoverProfession}</div>
   </div>
+
+  <!-- Static text for mobile view -->
+  <div class="flex flex-col items-center justify-center sm:hidden p-2.5 text-center">
+    <div class="font-bold text-lg text-gray-800">{hoverName}</div>
+    <div class="text-md text-gray-600 mt-1">{hoverProfession}</div>
+  </div>
+</div>
