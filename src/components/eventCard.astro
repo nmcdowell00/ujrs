@@ -9,83 +9,25 @@ type Props = {
 const { name, date, time, description } = Astro.props;
 ---
 
-<div class="event-card">
-  <div class="event-content">
+<div class="event-card border border-gray-300 bg-white shadow-sm overflow-hidden mx-auto mb-4">
+  <div class="event-content p-4">
     <!-- Event Name -->
-    <h2 class="event-name">{name}</h2>
+    <h2 class="event-name text-2xl text-black mb-2">{name}</h2>
 
     <!-- Event Date and Time -->
-    <div class="event-details">
-      <p><span class="label">Date:</span> {date}</p>
-      <p><span class="label">Time:</span> {time}</p>
+    <div class="event-details text-sm text-gray-600 mb-4">
+      <p><span class="label font-medium text-gray-800">Date:</span> {date}</p>
+      <p><span class="label font-medium text-gray-800">Time:</span> {time}</p>
     </div>
 
     <!-- Event Description -->
-    <p class="event-description">{description}</p>
+    <p class="event-description text-sm text-gray-700">{description}</p>
   </div>
 
   <!-- Call to Action or Footer (optional) -->
-  <div class="event-footer">
-    <button class="learn-more-btn">Learn More</button>
+  <div class="event-footer bg-gray-100 p-2 text-right">
+    <button class="bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 transition duration-200">
+      Sign up
+    </button>
   </div>
 </div>
-
-<style>
-  .event-card {
-    /* max-width: 80vw; */
-    margin: 0 auto;
-    margin-bottom: 16px; /* Add space between cards */
-    background-color: white;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-    overflow: hidden;
-    border: 1px solid #e5e5e5;
-  }
-
-  .event-content {
-    padding: 16px;
-  }
-
-  .event-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #065f46; /* Dark teal */
-    margin-bottom: 8px;
-  }
-
-  .event-details {
-    font-size: 0.875rem;
-    color: #4b5563; /* Gray-600 */
-    margin-bottom: 16px;
-  }
-
-  .event-details .label {
-    font-weight: 500;
-    color: #1f2937; /* Gray-800 */
-  }
-
-  .event-description {
-    font-size: 0.875rem;
-    color: #374151; /* Gray-700 */
-  }
-
-  .event-footer {
-    background-color: #f9fafb; /* Gray-100 */
-    padding: 16px;
-    text-align: right;
-  }
-
-  .learn-more-btn {
-    background-color: #065f46; /* Dark teal */
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    font-size: 0.875rem;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-
-  .learn-more-btn:hover {
-    background-color: #047857; /* Slightly lighter teal */
-  }
-</style>

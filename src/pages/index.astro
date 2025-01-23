@@ -11,13 +11,13 @@ import MainAltNoYScroll from '../components/MainAltNoYScroll.astro';
 
 <Layout>
 	<MainAltNoYScroll>
-		<div class="flex flex-col items-center justify-center p-5 gap-4 md:flex-row md:gap-12">
-			<div class="h-60 w-full md:hidden">
+		<div class="flex flex-col items-center justify-center p-5 gap-2 md:flex-row md:gap-12">
+			<div class="flex items-center justify-center md:hidden">
 				{/* Mobile image */}
 				<Image
 					src={Storefront}
 					alt="storefront"
-					class="w-full h-full object-cover shadow-lg"
+					class="w-[70%]"
 				/>
 			</div>
 			{/* Desktop image */}
@@ -25,14 +25,14 @@ import MainAltNoYScroll from '../components/MainAltNoYScroll.astro';
 				src={Storefront}
 				alt="storefront"
 				width={450}
-				class="hidden md:block shadow-lg"
+				class="hidden md:block shadow-lg w-full"
 			/>
-			<div class="flex flex-col justify-center w-full max-w-md">
-				<H1 class="text-center md:text-left text-3xl font-bold mb-4">
-					The Urban Jungle <br /> of Regent Square
-				</H1>
+			<div class="flex flex-col w-full h-full max-w-md gap-2">
+				<h1 class="text-center md:text-left text-3xl">
+					Urban Jungle <br /> of Regent Square
+				</h1>
 				<p class="text-gray-600 text-center md:text-left">
-					The Urban Jungle of Regent Square is a vibrant space designed to showcase the talents of local artisans while fostering community connections through engaging events and gatherings.
+					Urban Jungle of Regent Square is a vibrant space designed to showcase the talents of local artisans while fostering community connections through engaging events and gatherings.
 				</p>
 			</div>
 		</div>
