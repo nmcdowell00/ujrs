@@ -22,7 +22,7 @@ const { name, date, time, description } = Astro.props;
   <!-- Redirect to the signup page with the event name as a query parameter -->
   <div class="event-footer bg-gray-100 p-2 text-right">
     <a 
-      href={`/signup?event=${encodeURIComponent(name)}`} 
+      href={`/signup?event=${(name)}`} 
       class="bg-teal-700 text-white px-4 py-1 rounded hover:bg-teal-600 transition duration-200"
     >
       Sign up
