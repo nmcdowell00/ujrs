@@ -17,7 +17,7 @@ const events = await getCollection("events");
         <div class="event-list">
             {events.map((event) => (
               <EventCard 
-                name={event.data.title} 
+                name={event.data.name} 
                 date={event.data.date} 
                 time={event.data.time} 
                 description={event.data.description} 
