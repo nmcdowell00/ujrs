@@ -22,7 +22,6 @@ const { name, date, time, description } = Astro.props;
       name="event-signup" 
       method="POST" 
       data-netlify="true" 
-      data-netlify-recaptcha="true"
       class="signup-form flex items-center space-x-2 mt-4"
     >
       <input type="hidden" name="form-name" value="event-signup" />
@@ -45,7 +44,9 @@ const { name, date, time, description } = Astro.props;
         required 
         class="flex-1 p-2 border border-gray-300 rounded"
       />
-        <div netlify-recaptcha="true"></div>      
+      
+      <div data-netlify-recaptcha="true"></div> 
+
       <button 
         type="submit" 
         class="bg-teal-700 text-white px-4 py-2 rounded hover:bg-teal-600 transition duration-200"
