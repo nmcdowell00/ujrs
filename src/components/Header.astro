@@ -24,13 +24,3 @@
   </ul>
 </header>
 
-<script>
-  // Highlight the current page link
-  const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
-      link.classList.add('underline', 'underline-offset-4');
-    }
-  });
-</script>
