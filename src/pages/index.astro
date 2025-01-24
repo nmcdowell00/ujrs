@@ -10,8 +10,8 @@ import MainAltNoYScroll from '../components/MainAltNoYScroll.astro';
 <body class="overflow-hidden">
 
 <Layout>
-	<MainAltNoYScroll>
-		<div class="flex flex-col items-center justify-center p-5 gap-2 md:flex-row md:gap-12">
+	<Main>
+		<div class="flex flex-col items-center justify-center p-5 pt-0 gap-2 md:flex-row md:gap-12">
 			<div class="flex items-center justify-center md:hidden">
 				{/* Mobile image */}
 				<Image
@@ -24,7 +24,7 @@ import MainAltNoYScroll from '../components/MainAltNoYScroll.astro';
 			<Image
 				src={Storefront}
 				alt="storefront"
-				class="hidden md:block w-[40%] shadow-lg "
+				class="hidden md:block md:w-[35%] shadow-lg "
 			/>
 			<div class="flex flex-col w-full h-full max-w-md gap-2">
 				<h1 class="text-center md:text-left text-3xl">
@@ -35,6 +35,6 @@ import MainAltNoYScroll from '../components/MainAltNoYScroll.astro';
 				</p>
 			</div>
 		</div>
-	</MainAltNoYScroll>
+	</Main>
 </Layout>
 </body>

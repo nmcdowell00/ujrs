@@ -12,7 +12,7 @@ const events = await getCollection("events");
 ---
 
 <Layout>
-    <MainAlt>
+    <Main>
         <!-- <H1>Events Page</H1> -->
         <div class="event-list">
             {events.map((event) => (
@@ -24,7 +24,7 @@ const events = await getCollection("events");
               />
             ))}
         </div>
-    </MainAlt>
+    </Main>
 </Layout>
 
 <style>

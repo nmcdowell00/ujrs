@@ -22,35 +22,47 @@ const { name, date, time, description } = Astro.props;
       name="event-signup" 
       method="POST" 
       data-netlify="true" 
-      class="signup-form flex items-center space-x-2 mt-4"
+      class="signup-form flex items-center gap-2 mt-4"
+      netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="event-signup" />
       <input type="hidden" name="event-name" value={name} />
 
-      <input 
-        type="text" 
-        id={`name-${name}`} 
-        name="name" 
-        placeholder="Name" 
-        required 
-        class="flex-1 p-2 border border-gray-300 rounded"
-      />
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+      </p>
+        <div class = "inputsAndButton flex flex-col gap-2 md:flex-row">
+          <div class = "inputs flex flex-col md:flex-row gap-2">
+            <input 
+              type="text" 
+              id={`name-${name}`} 
+              name="name" 
+              placeholder="Name" 
+              required 
+              class="flex-1 p-1 border border-gray-300 rounded"
+            />
 
-      <input 
-        type="email" 
-        id={`email-${name}`} 
-        name="email" 
-        placeholder="Email" 
-        required 
-        class="flex-1 p-2 border border-gray-300 rounded"
-      />
-      
-      <button 
-        type="submit" 
-        class="bg-teal-700 text-white px-4 py-2 rounded hover:bg-teal-600 transition duration-200"
-      >
-        Sign Up
-      </button>
+            <input 
+              type="email" 
+              id={`email-${name}`} 
+              name="email" 
+              placeholder="Email" 
+              required 
+              class="flex-1 p-1 border border-gray-300 rounded"
+            />
+          </div>
+
+          <div class = "button">
+            <button 
+              type="submit" 
+              class="bg-teal-700 text-white px-4 py-2 rounded hover:bg-teal-600 transition duration-200"
+            >
+              Sign Up
+            </button>
+          </div>
+      </div>
     </form>
     
     

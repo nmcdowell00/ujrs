@@ -1,139 +1,77 @@
 ---
-import Main from "../components/Main.astro";
+
 import Layout from "../layouts/Layout.astro";
-
-import { getCollection } from 'astro:content'
-import HoverImage from "../components/HoverImage.astro";
-const assets = await getCollection('assets')
-console.log('assets',assets)
-import MainAlt from "../components/MainAlt.astro";
-
-// images to import
+import Main from "../components/Main.astro";
+import { Image } from 'astro:assets';
+import ArtisanWorkCard from "../components/artisanWorkCard.astro";
 import person1 from "../assets/headshots/person1.png"
 import person2 from "../assets/headshots/person2.png"
 import person3 from "../assets/headshots/person3.png"
 import person4 from "../assets/headshots/person4.png"
 import person5 from "../assets/headshots/person5.png"
-import H1 from "../components/H1.astro";
+
+import work1 from "../assets/products/work1.webp";
+import work2 from "../assets/products/work2.webp";
+import work3 from "../assets/products/work3.webp";
+import work4 from "../assets/products/work4.webp";
+
 ---
 <Layout>
-    <MainAlt>
-        <div class="px-4 py-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-[1920px] mx-auto justify-items-center">
-                <a href="./joeDorn" class="h-full">
-                        <HoverImage 
-                            imageSrc={person1} 
-                            altText="Description of the image" 
-                            hoverName="Joe Dorn" 
-                            hoverProfession="Silver Smith"
-                            className="custom-class"
-                        />
-                </a>
+    <Main>
+        <h2 class = "text-4xl text-center p-4">Featured Artisans of the Month</h2>
+        <div class="card-container grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4" >
+            
+            <ArtisanWorkCard
+            name="Matthew Connors"
+            profession="Basket Weaver"
+            headshot={person1}
+            work={work1}
+            description="MATTadfadfadfasdfaosjdf ads faksjdf aksdjfkajds kn dfja sdnadskoads asdiwe isj  asd"
+            />
 
-                <a>
-                <HoverImage 
-                    imageSrc={person2} 
-                    altText="Description of the image" 
-                    hoverName="Jax Corn" 
-                    hoverProfession="Woodworker"
-                    className="custom-class"
-                />
-                </a>
+            <ArtisanWorkCard
+            name="Brandon Turner"
+            profession="Basket Weaver"
+            headshot={person2}
+            work={work2}
+            description="MATTadfadfadfasdfaosjdf ads faksjdf aksdjfkajds kn dfja sdnadskoads asdiwe isj  asd"
+            />
 
-                <a>
-                <HoverImage 
-                    imageSrc={person3} 
-                    altText="Description of the image" 
-                    hoverName="Jax Corn" 
-                    hoverProfession="Woodworker"
-                    className="custom-class"
-                />
-                </a>
+            <ArtisanWorkCard
+            name="Mark Applegrove"
+            profession="Basket Weaver"
+            headshot={person3}
+            work={work3}
+            description="MATTadfadfadfasdfaosjdf ads faksjdf aksdjfkajds kn dfja sdnadskoads asdiwe isj  asd"
+            />
 
-                <a>
-                <HoverImage 
-                    imageSrc={person4} 
-                    altText="Description of the image" 
-                    hoverName="Jax Corn" 
-                    hoverProfession="Woodworker"
-                    className="custom-class"
-                />
-                </a>
+            <ArtisanWorkCard
+            name="Shane Kros"
+            profession="Basket Weaver"
+            headshot={person4}
+            work={work4}
+            description="MATTadfadfadfasdfaosjdf ads faksjdf aksdjfkajds kn dfja sdnadskoads asdiwe isj  asd"
+            />
 
-                <a>
-                <HoverImage 
-                    imageSrc={person5} 
-                    altText="Description of the image" 
-                    hoverName="Jax Corn" 
-                    hoverProfession="Woodworker"
-                    className="custom-class"
-                />
-                </a>
+            <ArtisanWorkCard
+            name="Matthew Connors"
+            profession="Basket Weaver"
+            headshot={person5}
+            work={work4}
+            description="adf"
+            />
 
-                <a>
-                <HoverImage 
-                    imageSrc={person2} 
-                    altText="Description of the image" 
-                    hoverName="Jax Corn" 
-                    hoverProfession="Woodworker"
-                    className="custom-class"
-                />
-                </a>
-
-                <a>
-                    <HoverImage 
-                        imageSrc={person2} 
-                        altText="Description of the image" 
-                        hoverName="Jax Corn" 
-                        hoverProfession="Woodworker"
-                        className="custom-class"
-                    />
-                </a>
-
-                <a>
-                    <HoverImage 
-                        imageSrc={person2} 
-                        altText="Description of the image" 
-                        hoverName="Jax Corn" 
-                        hoverProfession="Woodworker"
-                        className="custom-class"
-                    />
-                </a>
-
-                <a>
-                    <HoverImage 
-                        imageSrc={person2} 
-                        altText="Description of the image" 
-                        hoverName="Jax Corn" 
-                        hoverProfession="Woodworker"
-                        className="custom-class"
-                    />
-                </a>
-                <a>
-                    <HoverImage 
-                        imageSrc={person2} 
-                        altText="Description of the image" 
-                        hoverName="Jax Corn" 
-                        hoverProfession="Woodworker"
-                        className="custom-class"
-                    />
-                </a>
-                <a>
-                    <HoverImage 
-                        imageSrc={person2} 
-                        altText="Description of the image" 
-                        hoverName="Jax Corn" 
-                        hoverProfession="Woodworker"
-                        className="custom-class"
-                    />
-                </a>
-
-
-                
-                {/* ... rest of your HoverImage components ... */}
-            </div>
+            <ArtisanWorkCard
+            name="Matthew Connors"
+            profession="Basket Weaver"
+            headshot={person1}
+            work={work1}
+            description="MATTadfadfadfasdfaosjdf ads faksjdf aksdjfkajds kn dfja sdnadskoads asdiwe isj  asd "
+            />
         </div>
-    </MainAlt>
+        <div class="otherArtisans flex flex-col w-full mt-4 p-2 items-center">
+            <h2 class="text2xl font-bold text-center">Thank you to the rest of our aritsans!</h2>
+            <p class="text-center">Samuel Winters, Josh Beaugle, Tyler Manso, Elijah Laurel, Kevin Bordley, Etienne Luren, Samuel Winters, Josh Beaugle, Tyler Manso, Elijah Laurel, Kevin Bordley, Etienne Luren, Samuel Winters, Josh Beaugle, Tyler Manso, Elijah Laurel, Kevin Bordley, Etienne Luren, Samuel Winters, Josh Beaugle, Tyler Manso, Elijah Laurel, Kevin Bordley, Etienne Luren, Samuel Winters, Josh Beaugle, Tyler Manso, Elijah Laurel, Kevin Bordley, Etienne Luren, Samuel Winters, Josh Beaugle, Tyler Manso, Elijah Laurel, Kevin Bordley, Etienne Luren, Samuel Winters, Josh Beaugle, Tyler Manso, Elijah Laurel, Kevin Bordley, Etienne Luren,</p>
+        </div>
+    </Main>
 </Layout>
-
-  
