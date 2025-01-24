@@ -23,41 +23,37 @@ const { name, date, time, description } = Astro.props;
       method="POST" 
       data-netlify="true" 
       data-netlify-recaptcha="true"
-      class="signup-form space-y-3"
+      class="signup-form flex items-center space-x-2 mt-4"
     >
       <input type="hidden" name="form-name" value="event-signup" />
       <input type="hidden" name="event-name" value={name} />
 
-      <div>
-        <label for={`name-${name}`} class="block text-sm mb-1">Name</label>
-        <input 
-          type="text" 
-          id={`name-${name}`} 
-          name="name" 
-          required 
-          class="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
+      <input 
+        type="text" 
+        id={`name-${name}`} 
+        name="name" 
+        placeholder="Name" 
+        required 
+        class="flex-1 p-2 border border-gray-300 rounded"
+      />
 
-      <div>
-        <label for={`email-${name}`} class="block text-sm mb-1">Email</label>
-        <input 
-          type="email" 
-          id={`email-${name}`} 
-          name="email" 
-          required 
-          class="w-full p-2 border border-gray-300 rounded"
-        />
-      </div>
-
-      <div data-netlify-recaptcha="true"></div>
+      <input 
+        type="email" 
+        id={`email-${name}`} 
+        name="email" 
+        placeholder="Email" 
+        required 
+        class="flex-1 p-2 border border-gray-300 rounded"
+      />
 
       <button 
         type="submit" 
-        class="w-full bg-teal-700 text-white px-4 py-2 rounded hover:bg-teal-600 transition duration-200"
+        class="bg-teal-700 text-white px-4 py-2 rounded hover:bg-teal-600 transition duration-200"
       >
-        Submit Signup
+        Sign Up
       </button>
     </form>
+    
+    <!-- <div class="mt-2" data-netlify-recaptcha="true"></div> -->
   </div>
 </div>
