@@ -1,7 +1,7 @@
 ---
-name: Collaging
-date:  02/01/2025
-time: 8:30 PM
-description: This event is about having more fun
+name: Valentine's Cards
+date:  02/09/2025
+time: tbd
+description: Join us for a fun, hands-on workshop creating handmade Valentine’s cards! Explore colorful papers, patterns, and techniques to craft unique, heartfelt cards for your loved ones.
 
 ---
